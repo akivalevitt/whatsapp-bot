@@ -2,8 +2,8 @@ import logging
 from flask import current_app, jsonify
 import json
 import requests
-import aiohttp
-import asyncio
+# import aiohttp
+# import asyncio
 from dotenv import load_dotenv
 from dotenv import set_key
 

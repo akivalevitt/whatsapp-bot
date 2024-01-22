@@ -7,4 +7,4 @@ RUN apt-get update && apt-get install -y wget unzip && \
     rm google-chrome-stable_current_amd64.deb && \
     apt-get clean
 
-RUN gunicorn -w 4 -b 0.0.0.0:8000 run:app
+CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:8000", "run:app"]

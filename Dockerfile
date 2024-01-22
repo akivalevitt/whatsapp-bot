@@ -1,5 +1,11 @@
 FROM python:3.11
 
+WORKDIR /
+
+
+COPY . /
+
+
 RUN pip install --trusted-host pypi.python.org -r requirements.txt
 
 RUN apt-get update && apt-get install -y wget unzip && \

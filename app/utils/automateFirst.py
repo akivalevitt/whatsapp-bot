@@ -38,7 +38,7 @@ def runBot(message):
     loginButton = driver.find_element("xpath",'//*[@id="OBSubmit"]')
     loginButton.click()
 
-    time.sleep(5)
+    time.sleep(10)
     cookies = driver.get_cookies()
     # pickle.dump(cookies,open("cookies.pkl","wb"))
     print(cookies)

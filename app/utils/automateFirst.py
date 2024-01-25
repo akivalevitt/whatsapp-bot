@@ -89,9 +89,9 @@ def runBot(message):
     print("\nSUCCESS BIG BIG BIG SUCCESS\n")
 
     # NB ONLY UNCOMMENT FOR ACTUAL PAYMENT
-    # time.sleep(1)
-    # pay = driver.find_element("xpath",'//*[@id="mainBtnHref"]')
-    # pay.click()
+    time.sleep(1)
+    pay = driver.find_element("xpath",'//*[@id="mainBtnHref"]')
+    pay.click()
 
     return member
 

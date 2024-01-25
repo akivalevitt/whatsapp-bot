@@ -39,9 +39,11 @@ def runBot(message):
     loginButton.click()
 
     time.sleep(10)
-    cookies = driver.get_cookies()
-    # pickle.dump(cookies,open("cookies.pkl","wb"))
-    print(cookies)
+    html = driver.page_source
+    print(html)
+    # cookies = driver.get_cookies()
+    # # pickle.dump(cookies,open("cookies.pkl","wb"))
+    # print(cookies)
 
     paymentsButton = driver.find_element("xpath",'//*[@id="shortCutLinks"]/span[3]')
     # paymentsButton = driver.find_element("xpath",'//*[@id="newsLanding"]/div[3]/ul/li[4]/div')

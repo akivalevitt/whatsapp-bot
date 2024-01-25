@@ -39,9 +39,8 @@ def runBot(message):
     loginButton.click()
 
     time.sleep(10)
-    html = driver.page_source
-    time.sleep(2)
-    print(html)
+    myname = driver.find_element("xpath",'//*[@id="welcomeContainer"]/div')
+    print(myname.text)
     # cookies = driver.get_cookies()
     # # pickle.dump(cookies,open("cookies.pkl","wb"))
     # print(cookies)

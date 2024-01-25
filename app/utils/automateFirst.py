@@ -43,15 +43,14 @@ def runBot(message):
     # pickle.dump(cookies,open("cookies.pkl","wb"))
     print(cookies)
 
-    #paymentsButton = driver.find_element("xpath",'//*[@id="rewardsContainerInner"]/a')
-    paymentsButton = driver.find_element("xpath",'//*[@id="newsLanding"]/div[3]/ul/li[4]/div')
+    paymentsButton = driver.find_element("xpath",'//*[@id="shortCutLinks"]/span[3]')
+    # paymentsButton = driver.find_element("xpath",'//*[@id="newsLanding"]/div[3]/ul/li[4]/div')
     paymentsButton.click()
     time.sleep(2)
 
 
-    onceOffButton = driver.find_element("xpath",'//*[@id="subTabsScrollable"]/div[3]')
+    onceOffButton = driver.find_element("xpath",'//*[@id="subTabsScrollable"]/div[2]')
     onceOffButton.click()
-
 
     time.sleep(1)
 

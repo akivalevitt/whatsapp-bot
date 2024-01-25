@@ -37,7 +37,14 @@ def runBot(message):
 
     loginButton = driver.find_element("xpath",'//*[@id="OBSubmit"]')
     loginButton.click()
-
+    time.sleep(2)
+    print("\nTESTING TIMER\n")
+    time.sleep(2)
+    print("\nTESTING TIMER\n")
+    time.sleep(2)
+    print("\nTESTING TIMER\n")
+    time.sleep(2)
+    print("\nTESTING TIMER\n")
     time.sleep(10)
     myname = driver.find_element("xpath",'//*[@id="welcomeContainer"]/div')
     print(myname.text)

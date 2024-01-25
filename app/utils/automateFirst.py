@@ -40,7 +40,7 @@ def runBot(message):
 
     time.sleep(5)
     cookies = driver.get_cookies()
-    pickle.dump(cookies,open("cookies.pkl","wb"))
+    # pickle.dump(cookies,open("cookies.pkl","wb"))
     print(cookies)
 
     #paymentsButton = driver.find_element("xpath",'//*[@id="rewardsContainerInner"]/a')
@@ -81,6 +81,11 @@ def runBot(message):
     time.sleep(1)
     accountselection = driver.find_element("xpath",'//*[@id="fromAnrfn_parent"]/div[2]/div[2]/ul/li[2]')
     accountselection.click()
+
+    print("\nSUCCESS BIG BIG BIG SUCCESS\n")
+    print("\nSUCCESS BIG BIG BIG SUCCESS\n")
+    print("\nSUCCESS BIG BIG BIG SUCCESS\n")
+    print("\nSUCCESS BIG BIG BIG SUCCESS\n")
 
     # NB ONLY UNCOMMENT FOR ACTUAL PAYMENT
     # time.sleep(1)

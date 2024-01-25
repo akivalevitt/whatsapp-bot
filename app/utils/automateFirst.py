@@ -70,7 +70,7 @@ def runBot(message):
     accountHowMuch.send_keys(member["Amount"])
     accountTheirReference.send_keys(member["Name"])
     accountMyReference.send_keys('Ai automation')
-    methodContactInput0.send_keys('akivalevitt8@gmail.com')
+    methodContactInput0.send_keys('ak@gmail.com')
 
     
     time.sleep(1)

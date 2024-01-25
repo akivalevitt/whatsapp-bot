@@ -40,6 +40,7 @@ def runBot(message):
 
     time.sleep(10)
     html = driver.page_source
+    time.sleep(2)
     print(html)
     # cookies = driver.get_cookies()
     # # pickle.dump(cookies,open("cookies.pkl","wb"))

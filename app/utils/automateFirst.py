@@ -66,13 +66,19 @@ def runBot(message):
     # paymentsButton = WebDriverWait(driver, 10).until(
     #     EC.presence_of_element_located((By.XPATH, '//*[@id="shortCutLinks"]/span[3]'))
     # )
-    paymentsButton = driver.find_element("xpath",'//*[@id="shortCutLinks"]/span[3]')
-    # paymentsButton = driver.find_element("xpath",'//*[@id="newsLanding"]/div[3]/ul/li[4]/div')
-    paymentsButton.click()
-    time.sleep(2)
+        
+
+    # paymentsButton = driver.find_element("xpath",'//*[@id="shortCutLinks"]/span[3]')
+    # # paymentsButton = driver.find_element("xpath",'//*[@id="newsLanding"]/div[3]/ul/li[4]/div')
+    # paymentsButton.click()
+    # time.sleep(2)
 
 
-    onceOffButton = driver.find_element("xpath",'//*[@id="subTabsScrollable"]/div[2]')
+    # onceOffButton = driver.find_element("xpath",'//*[@id="subTabsScrollable"]/div[2]')
+    # onceOffButton.click()
+        
+
+    onceOffButton = driver.find_element("xpath",'//*[@id="whatsNewContainer"]/ul/li[2]/a')
     onceOffButton.click()
 
     time.sleep(1)

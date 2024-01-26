@@ -11,6 +11,8 @@ from app.utils import aiPart
 from dotenv import load_dotenv
 from dotenv import set_key
 
+from flask import current_app, jsonify
+
 import os
 
 def runBot(message):
@@ -33,7 +35,9 @@ def runBot(message):
     password = driver.find_element("xpath",'//*[@id="pass"]')
 
     username.send_keys(member["Username"])
-    password.send_keys(os.getenv("PASSWORD"))
+    password.send_keys(current_app.config['USERNAME'])
+    password.send_keys(current_app.config['PASSWORD'])
+    
 
     loginButton = driver.find_element("xpath",'//*[@id="OBSubmit"]')
     loginButton.click()

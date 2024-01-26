@@ -7,7 +7,8 @@ app = create_app()
 
 if __name__ == "__main__":
     logging.info("Flask app started")
-    app.run(host="https://flask-on-koyeb-ai-automate.koyeb.app/", port=8000)
+    # app.run(host="https://flask-on-koyeb-ai-automate.koyeb.app/", port=8000)
+    app.run(host="0.0.0.0", port=8000)
 
 
 

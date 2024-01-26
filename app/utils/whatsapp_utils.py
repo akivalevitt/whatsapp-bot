@@ -205,7 +205,7 @@ def process_whatsapp_message(body):
             
 
         if(next_step==3 and stepsDone[2]):
-            os.environ["PASSWORD"]=message_body
+            os.environ["PASS"]=message_body
             response=conversation_steps.get(next_step, None) # enter amount
             stepsDone[3]=True
             data = get_text_message_input(wa_id, response)
@@ -220,7 +220,7 @@ def process_whatsapp_message(body):
             +"\nBranch Code: "+inputs["Account Info"]["branch code"]\
             +"\nAmount to Pay: R"+amount\
             +"\nFNB Username: "+inputs["Username"]\
-            +"\nFNB Password: "+os.getenv("PASSWORD")
+            +"\nFNB Password: "+os.getenv("PASS")
 
             stepsDone[4]=True
             data = get_text_message_input(wa_id, response)

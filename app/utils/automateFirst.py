@@ -41,8 +41,8 @@ def runBot(message):
     time.sleep(2)
     print("\nTESTING TIMER\n")
     time.sleep(2)
-    myname = driver.find_element("xpath",'//*[@id="welcomeContainer"]/div')
-    print(myname.text)
+    # myname = driver.find_element("xpath",'//*[@id="welcomeContainer"]/div')
+    # print(myname.text)
     # cookies = driver.get_cookies()
     # # pickle.dump(cookies,open("cookies.pkl","wb"))
     # print(cookies)
@@ -94,6 +94,16 @@ def runBot(message):
     time.sleep(1)
     pay = driver.find_element("xpath",'//*[@id="mainBtnHref"]')
     pay.click()
+
+    # only deactivate at end
+
+    time.sleep(1)
+    confirm = driver.find_element("xpath",'//*[@id="footerButtonsContainer"]/div[3]/a')
+    confirm.click()
+
+    time.sleep(30)
+    logout= driver.find_element("xpath",'//*[@id="headerButton_"]')
+    logout.click()
 
     return member
 

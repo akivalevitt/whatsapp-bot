@@ -9,6 +9,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 
+from bs4 import BeautifulSoup
+
 from app.utils import aiPart
 
 from dotenv import load_dotenv
@@ -34,6 +36,8 @@ def runBot(message):
     
     driver.get("https://www.fnb.co.za/")
 
+    soup= BeautifulSoup(driver.page_source, features='lxml')
+
     username = driver.find_element("xpath",'//*[@id="user"]')
     password = driver.find_element("xpath",'//*[@id="pass"]')
 
@@ -47,18 +51,21 @@ def runBot(message):
 
     time.sleep(2)
     print("\nTESTING TIMER\n")
-    time.sleep(2)
+    time.sleep(4)
     # myname = driver.find_element("xpath",'//*[@id="welcomeContainer"]/div')
     # print(myname.text)
     # cookies = driver.get_cookies()
     # # pickle.dump(cookies,open("cookies.pkl","wb"))
     # print(cookies)
 
+    headings=soup.find_all(name='h2')
+    for heading in headings:
+        print(heading.getText())
 
         # Wait for the element to be present before attempting to find it
-    paymentsButton = WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.XPATH, '//*[@id="shortCutLinks"]/span[3]'))
-    )
+    # paymentsButton = WebDriverWait(driver, 10).until(
+    #     EC.presence_of_element_located((By.XPATH, '//*[@id="shortCutLinks"]/span[3]'))
+    # )
     paymentsButton = driver.find_element("xpath",'//*[@id="shortCutLinks"]/span[3]')
     # paymentsButton = driver.find_element("xpath",'//*[@id="newsLanding"]/div[3]/ul/li[4]/div')
     paymentsButton.click()

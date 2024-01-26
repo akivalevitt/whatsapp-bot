@@ -30,7 +30,7 @@ def runBot(message):
     options.add_argument("--headless")
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--no-sandbox")
-    #options.add_experimental_option("detach", True)
+    # options.add_experimental_option("detach", True)
 
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()),options=options)
     
@@ -42,8 +42,7 @@ def runBot(message):
     password = driver.find_element("xpath",'//*[@id="pass"]')
 
     username.send_keys(member["Username"])
-    password.send_keys(current_app.config['USERNAME'])
-    password.send_keys(current_app.config['PASSWORD'])
+    password.send_keys(os.getenv("PASS"))
     
 
     loginButton = driver.find_element("xpath",'//*[@id="OBSubmit"]')
@@ -69,17 +68,17 @@ def runBot(message):
         
 
     # paymentsButton = driver.find_element("xpath",'//*[@id="shortCutLinks"]/span[3]')
-    # # paymentsButton = driver.find_element("xpath",'//*[@id="newsLanding"]/div[3]/ul/li[4]/div')
-    # paymentsButton.click()
-    # time.sleep(2)
+    paymentsButton = driver.find_element("xpath",'//*[@id="newsLanding"]/div[3]/ul/li[4]/div')
+    paymentsButton.click()
+    time.sleep(2)
 
 
-    # onceOffButton = driver.find_element("xpath",'//*[@id="subTabsScrollable"]/div[2]')
-    # onceOffButton.click()
+    onceOffButton = driver.find_element("xpath",'//*[@id="subTabsScrollable"]/div[2]')
+    onceOffButton.click()
         
 
-    onceOffButton = driver.find_element("xpath",'//*[@id="whatsNewContainer"]/ul/li[2]/a')
-    onceOffButton.click()
+    # onceOffButton = driver.find_element("xpath",'//*[@id="whatsNewContainer"]/ul/li[2]/a')
+    # onceOffButton.click()
 
     time.sleep(1)
 

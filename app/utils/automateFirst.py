@@ -119,6 +119,7 @@ def runBot(message):
     pay = driver.find_element("xpath",'//*[@id="mainBtnHref"]')
     pay.click()
 
+    
     # only deactivate at end
 
     time.sleep(1)
@@ -126,6 +127,10 @@ def runBot(message):
     confirm.click()
 
     time.sleep(30)
+    finish = driver.find_element("xpath",'//*[@id="footerButtonsContainer"]/div[2]/a')
+    finish.click()
+    
+    time.sleep(1)
     logout= driver.find_element("xpath",'//*[@id="headerButton_"]')
     logout.click()
 

@@ -5,6 +5,9 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 
 from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
 
 from app.utils import aiPart
 
@@ -51,6 +54,11 @@ def runBot(message):
     # # pickle.dump(cookies,open("cookies.pkl","wb"))
     # print(cookies)
 
+
+        # Wait for the element to be present before attempting to find it
+    paymentsButton = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.XPATH, '//*[@id="shortCutLinks"]/span[3]'))
+    )
     paymentsButton = driver.find_element("xpath",'//*[@id="shortCutLinks"]/span[3]')
     # paymentsButton = driver.find_element("xpath",'//*[@id="newsLanding"]/div[3]/ul/li[4]/div')
     paymentsButton.click()

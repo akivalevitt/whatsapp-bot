@@ -6,7 +6,7 @@ import os
 def dictOfBankDetails(message):
 
     openai.api_key=os.getenv("SECRETKEY")
-    #message="Bank: FNB/RMB Account Holder: Akiva Levitt Account Type: FNB Aspire Current Account Account Number: 62461084370 branch code: 250655"
+    #message="Bank: FNB/RMB Account Holder: ..."
     stream = openai.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[{"role": "user", "content": "Given the following banking details, provide me with a dictionary giving me the: name, account number and branch code. If they are empty populate them with an empty string:"+message}],
